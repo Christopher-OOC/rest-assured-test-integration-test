@@ -47,14 +47,13 @@ class TestCreateUser {
 		billingAddress.put("postalCode", "123456");
 		billingAddress.put("type", "billing");
 
-		
 		userAddresses.add(shippingAddress);
 		userAddresses.add(billingAddress);
-		
+
 		Map<String, Object> userDetails = new HashMap<>();
 		userDetails.put("firstName", "Christopher");
 		userDetails.put("lastName", "Olojede");
-		userDetails.put("email", "olojedechristopher24@gmail.com");
+		userDetails.put("email", "olojedechristopher@gmail.com");
 		userDetails.put("password", "olamide");
 		userDetails.put("addresses", userAddresses);
 
@@ -75,10 +74,10 @@ class TestCreateUser {
 
 			assertNotNull(addresses);
 			assertTrue(addresses.length() == 2);
-		
+
 			String addressId = addresses.getJSONObject(0).getString("addressId");
 			assertNotNull(addressId);
-		
+
 		} catch (JSONException e) {
 			fail(e.getMessage());
 		}
